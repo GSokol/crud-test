@@ -1,0 +1,13 @@
+fos_rest:
+    routing_loader:
+        default_format: json
+    view:
+        formats:
+            json: true
+        mime_types:
+            json: ['application/json']
+        failed_validation: HTTP_BAD_REQUEST
+    disable_csrf_role: ROLE_API
+    exception:
+            codes:
+                'Symfony\Component\Routing\Exception\ResourceNotFoundException': 404
